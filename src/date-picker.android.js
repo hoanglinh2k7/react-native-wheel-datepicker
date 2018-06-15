@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
 
 const stylesFromProps = props => ({
   itemSpace: props.itemSpace,
+  colorDivider: props.colorDivider,
   textColor: props.textColor,
   textSize: props.textSize,
 });
@@ -37,6 +38,7 @@ export default class DatePicker extends PureComponent {
     textColor: ColorPropType,
     textSize: PropTypes.number,
     itemSpace: PropTypes.number,
+    colorDivider: ColorPropType,
   };
 
   static defaultProps = {
@@ -49,6 +51,7 @@ export default class DatePicker extends PureComponent {
     textColor: '#333',
     textSize: 26,
     itemSpace: 20,
+    colorDivider:'#FFFFFF'
   };
 
   constructor(props) {

@@ -1,6 +1,9 @@
 package com.zyu;
 
 import android.graphics.Color;
+import android.nfc.Tag;
+import android.os.Debug;
+import android.util.Log;
 
 import com.aigestudio.wheelpicker.core.AbstractWheelPicker;
 import com.facebook.react.bridge.ReadableArray;
@@ -72,11 +75,18 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
             picker.setTextColor(color);
         }
     }
-
     @ReactProp(name="textSize")
     public void setTextSize(ReactWheelCurvedPicker picker, int size) {
         if (picker != null) {
             picker.setTextSize((int) PixelUtil.toPixelFromDIP(size));
+        }
+    }
+
+    @ReactProp(name="colorDivider")
+    public void setColorDivider(ReactWheelCurvedPicker picker, String color) {
+        Log.e("WheelCurvedPicker", color);
+        if (picker != null) {
+            picker.setColorDivider(Color.parseColor(color));
         }
     }
 
